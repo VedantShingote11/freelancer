@@ -1,0 +1,21 @@
+{
+  "name": "dt",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "data-parser": "^1.0.1",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "mongoos": "^0.0.1-security",
+    "mongoose": "^8.7.0",
+    "nodemon": "^3.1.7"
+  },
+  "description": ""
+}

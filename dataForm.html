@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Form</title>
+    <link rel="stylesheet" href="dataForm.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>User Profile Form</h2>
+        <form action="http://localhost:3000/submit-profile" method="POST">
+
+            <div class="form-section">
+                <h3>Personal Information</h3>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="10-digit number"><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob"><br>
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3"></textarea>
+            </div>
+
+            <div class="form-section">
+                <h3>Work Info</h3>
+
+                <label for="charge">Charge per Hour ($):</label>
+                <input type="number" id="charge" name="charge" min="0"><br>
+
+                <label for="about">About:</label>
+                <textarea id="about" name="about" rows="4"></textarea><br>
+
+                <label for="services">My Services:</label>
+                <textarea id="services" name="services" rows="4"></textarea><br>
+
+                <label for="experience">Experience (Years):</label>
+                <input type="number" id="experience" name="experience" min="0"><br>
+
+                <label for="projects">Projects (Links):</label>
+                <textarea id="projects" name="projects" rows="3"
+                    placeholder="Enter project links separated by commas"></textarea>
+            </div>
+
+            <button type="submit">Save Profile</button>
+        </form>
+
+        <script>
+            document.getElementsByTagName(form).addEventListener('submit', function (e) {
+                e.preventDefault(); // Prevent the form from submitting the usual way
+
+                const formData = new FormData(this); // Collect the form data
+
+                // Submit the form data using fetch
+                fetch('/submit-profile', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.text()) // Get the response as HTML
+                    .then(html => {
+                        // Append the returned HTML to the viewProfile div
+                        document.querySelector('.viewProfile').innerHTML = html;
+                    })
+                    .catch(error => {
+                        console.error('Error submitting profile:', error);
+                    });
+            });
+        </script>
+    </div>
+</body>
+
+</html>
