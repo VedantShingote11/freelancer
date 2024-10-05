@@ -39,13 +39,16 @@ const Form = mongoose.model('Form', formSchema);
 
 // Serve Form
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/dataForm.html')
+    res.render('dataForm')
 })
 
 // Add in database
 
-app.post("/submit-profile", async (req, res) => {
+app.post("/submit-form", async (req, res) => {
+    
     try {
+        
+        
         const newForm = Form({
     
             name: req.body.name,
@@ -62,18 +65,41 @@ app.post("/submit-profile", async (req, res) => {
 
         await newForm.save();
 
-        const userData = await Form.findOne({email : req.body.email})
-
-        res.render('profileTemplet' , {
-
-            name : userData.name,
-            address : userData.address
-        });
+        res.redirect(`/profileTemplet.ejs?email=${req.body.email}`);
 
         // res.status(200).send('Profile submitted successfully!');
     }
     catch (err) {
         res.status(500).send('Error saving data.');
+    }
+});
+
+app.get('/profileTemplet.ejs' , async(req , res)=>{
+
+    try{
+        const email = req.query.email;
+        const userData = await Form.findOne({ email: email});
+
+        if (userData) {
+            // Render profile template with the latest data
+
+            res.render('profileTemplet', {
+                name: userData.name,
+                // mobile: userData.mobile,
+                email: userData.email,
+                // dob: userData.dob,
+                address: userData.address,
+                // charge: userData.charge,
+                // about: userData.about,
+                // services: userData.services,
+                // experience: userData.experience,
+                // projects: userData.projects
+            });
+        } else {
+            res.send('User data not found');
+        }
+    }catch(err) {
+        res.status(500).send('Error fetching profile data');
     }
 });
 

@@ -1,121 +1,23 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="profileTempletStyle.css">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <div class="main">
-            <img src="Man_Image.png" alt="">
-            <div class="name">
-                <span>Austin Taylor C.</span>
-                <span>@austinatx</span>
-                <span>Fantastic Wordspress & Shopify Developer</span>
-            </div>
-
-            <div class="star">
-                <div class="box">5.0</div>
-                <img src="Star.png" alt="">
-                <img src="Star.png" alt="">
-                <img src="Star.png" alt="">
-                <img src="Star.png" alt="">
-                <img src="Star.png" alt="">
-                <span>(39 reviews)</span>
-            
-        
-                </div>
-
-                <div class="main1">
-                    <span>100%</span>
-                    <span>Jobs Completed</span>
-                    <span>100%</span>
-                    <span>Jobs Completed</span>         
-                </div>
-                <div class="main2">
-                    <span>100%</span>
-                    <span>On Time</span>
-                    <span>14%</span>
-                    <span>Repeat Hire Rate</span>
-                </div>
-                <div class="word">
-                     <span>QUALITY + PUNCTUALITY + CONFIDENTIALITY</span>
-                </div>
-                <div class="word1">
-                     <span>MY SERVICES:</span>
-                </div>
-                <div class="main3">
-                    <div class="box1">-Creating wordpress and HTML Websites</div>
-                    <div class="box2">-Building eCommerce Websites</div>
-                    <div class="box3">-Building shopify Sites, Customizing shopify templates</div>
-                    <div class="box4">-Making templates from graphic moc-ups</div>
-                    <div class="box5">Transferring your website to another Hosting</div>
-                    <div class="box6">-Flexing HTML5,CSS,PHP and DataBase Issues</div>
-                    <div class="box7">-Upgrading old Sites</div>
-                    <div class="box8">-FLexing a HACK site</div>
-                    <div class="box9">-Configuring Extensions and plugins</div>
-                </div>
-
-                <div class="main4">Why Me?
-                    <div class="box1"><span>5+ Year of Experience</span></div>
-                    <div class="box2"><span>100% Satisfaction assured</span></div>
-                    <div class="box3"><span>Wide portfolio of services</span></div>
-                    <div class="box4"><span>Technological Excellence across platforms</span></div>
-                    <div class="box5"><span>Thoughtful and futuristic and Web Development</span></div>
-                    <div class="box6"><span>Long Term Relationship!!</span></div>
-                    <div class="box7"><span>Hope TO Be Working with you</span></div>
-                </div>
-
-                <div class="bottom">
-                    <span><img  src="Circle.jpeg" alt=""></span>
-                    <span>I'm offline!</span>
-                    <div class="dollar">
-                        <span><img src="Dollar.jpeg" alt=""></span>
-                        <span>$50 USD / Hour</span>
-                    </div>
-                    <div class="time">
-                        <span><img src="Clock.jpeg" alt=""></span>
-                        <span>It's Currently 4am here</span>
-                    </div>
-                    <div class="arrow">
-                        <span><img src="Down_arrow.png" alt=""></span>
-                        <span>Joined May 26, 2019 </span>
-                    </div>
-
-                    <div class="heart">
-                        <span><img src="Heart.png" alt=""></span>
-                        <span>Zero Recommendation</span>
-                    </div>
-                </div>
-            </div>
-    </header> 
-</body>
-</html> -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="profileTempletStyle.css">
+    <link rel="stylesheet" href="/DT/public/profileTempletStyle.css">
     <title>User Profile</title>
 </head>
 <body>
     <header>
         <div class="main">
-            <!-- Profile Photo -->
             <img src="{PROFILE_PHOTO}" alt="Profile Photo">
             
-            <!-- Personal Information -->
             <div class="name">
                 <span><%= name %></span>
                 <span>{Email}</span>
                 <span>{ABOUT}</span>
             </div>
 
-            <!-- Work Information -->
             <div class="work-info">
                 <div class="charge">
                     <span>{CHARGE_PER_HOUR} USD / Hour</span>
@@ -132,12 +34,10 @@
                     </ul>
                 </div>
 
-                <!-- Experience -->
                 <div class="experience">
                     <span>Experience: {EXPERIENCE} Years</span>
                 </div>
 
-                <!-- Projects with Links -->
                 <div class="projects">
                     <span>Projects:</span>
                     <ul>
@@ -147,13 +47,11 @@
                     </ul>
                 </div>
 
-                <!-- Address Information -->
                 <div class="address">
                     <span>Address: <%= address %></span>
                 </div>
             </div>
 
-            <!-- Additional Details -->
             <div class="more-info">
                 <div class="dob">
                     <span>Date of Birth: {DOB}</span>
@@ -169,3 +67,5 @@
     </header>
 </body>
 </html>
+
+ 
